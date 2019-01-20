@@ -5,9 +5,18 @@ const orderSchema = mongoose.Schema({
     user_id: {
         type: mongoose.Schema.Types.ObjectId
     },
+    product: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product',
+        required: true
+    },
     status: {
         type: Number,
         default: 1
+    },
+    quantity: {
+        type: Number,
+        required: true
     },
     total: {
         type: Number,
